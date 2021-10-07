@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Poly-translator</title>
+ </head>
+ <style>
+.btable {
+  border:solid black;
+}
+table {
+    border-collapse: collapse;
+}
+</style>
+ <body>
+  <form method="POST" action="/response">
+	<table>
+		<br>
+			Word to translate: <input type="text" name="keyword"<br>
+		</br>
+			Input language: <input type="text" name="inpLang">
+		<br>
+			Output language: <input type="text" name="outLang1">
+		</br>
+		<tr>
+			<td>
+				<input type="button" name="addMe" onclick="outLang2f()" value="+">
+			</td>
+			<td id="outLangC2" style="display:none">	
+				Output language 2 <input type="text" name="outLang2" >
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="button" name="addMe" onclick="outLang3f()" value="+">
+			</td>
+			<td id="outLangC3" style="display:none">	
+				Output language 3 <input type="text" name="outLang3" >
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="button" name="addMe" onclick="outLang4f()" value="+">
+			</td>
+			<td id="outLangC4" style="display:none">	
+				Output language 4 <input type="text" name="outLang4" >
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="button" name="addMe" onclick="outLang5f()" value="+">
+			</td>
+			<td id="outLangC5" style="display:none">	
+				Output language 5 <input type="text" name="outLang5" >
+			</td>
+		</tr>
+	</table>
+	<p>
+		<input type="submit" value="Submit">
+	</p>
+  </form>
+
+  <br>Legend</br>
+  <table>
+	<th class='btable'>Language</th>
+	<th class='btable'>Shortcut</th>
+	<tr><td class='btable'>English</td><td class='btable'>en</td></tr>
+	<tr><td class='btable'>Arabic</td><td class='btable'>ar</td></tr>
+	<tr><td class='btable'>Chinese</td><td class='btable'>zh</td></tr>
+	<!--<tr><td class='btable'>Dutch</td><td class='btable'>nl</td></tr>-->
+	<tr><td class='btable'>Finnish</td><td class='btable'>fi</td></tr>
+	<tr><td class='btable'>French</td><td class='btable'>fr</td></tr>
+	<tr><td class='btable'>German</td><td class='btable'>de</td></tr>
+	<tr><td class='btable'>Hindi</td><td class='btable'>hi</td></tr>
+	<tr><td class='btable'>Hungarian</td><td class='btable'>hu</td></tr>
+	<tr><td class='btable'>Indonesian</td><td class='btable'>id</td></tr>
+	<tr><td class='btable'>Irish</td><td class='btable'>ga</td></tr>
+	<tr><td class='btable'>Italian</td><td class='btable'>it</td></tr>
+	<tr><td class='btable'>Japanese</td><td class='btable'>ja</td></tr>
+	<tr><td class='btable'>Korean</td><td class='btable'>ko</td></tr>	
+	<tr><td class='btable'>Polish</td><td class='btable'>pl</td></tr>	
+	<tr><td class='btable'>Portuguese</td><td class='btable'>pt</td></tr>	
+	<tr><td class='btable'>Russian</td><td class='btable'>ru</td></tr>		
+	<tr><td class='btable'>Spanish</td><td class='btable'>sv</td></tr>		
+	<tr><td class='btable'>Turkish</td><td class='btable'>tr</td></tr>	
+	<tr><td class='btable'>Ukrainian</td><td class='btable'>uk</td></tr>		
+	<tr><td class='btable'>Vietnamese</td><td class='btable'>vi</td></tr>		
+</table>
+
+ </body>
+ <footer><p style="text-align: center">API service: libretranslate.com</p></footer>
+</html>
+
+<script type="text/javascript">
+function outLang2f(){
+    langEl = document.getElementById('outLangC2');
+    if(langEl.style.display=="none"){
+		langEl.style.display="block";
+	} else {
+		langEl.style.display="none"
+	}
+}
+function outLang3f(){
+    langEl = document.getElementById('outLangC3');
+    if(langEl.style.display=="none"){
+		langEl.style.display="block";
+	} else {
+		langEl.style.display="none"
+	}
+}
+function outLang4f(){
+    langEl = document.getElementById('outLangC4');
+    if(langEl.style.display=="none"){
+		langEl.style.display="block";
+	} else {
+		langEl.style.display="none"
+	}
+}
+function outLang5f(){
+    langEl = document.getElementById('outLangC5');
+    if(langEl.style.display=="none"){
+		langEl.style.display="block";
+	} else {
+		langEl.style.display="none"
+	}
+}
+
+</script>
