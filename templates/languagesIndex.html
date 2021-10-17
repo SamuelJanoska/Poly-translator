@@ -11,6 +11,46 @@
 table {
     border-collapse: collapse;
 }
+.strike {
+	text-decoration: line-through;
+}
+
+.tooltip {
+  position: relative;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: 1px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
 </style>
  <body>
  <h1 style="text-align: center">PolyTranslator</h1>
@@ -73,9 +113,9 @@ table {
 	<tr><td class='btable'>French</td><td class='btable'>fr</td></tr>
 	<tr><td class='btable'>German</td><td class='btable'>de</td></tr>
 	<tr><td class='btable'>Hindi</td><td class='btable'>hi</td></tr>
-	<tr><td class='btable'>Hungarian</td><td class='btable'>hu</td></tr>
+	<tr><td class='btable strike tooltip'>Hungarian<div class="tooltiptext">'hu not supported ' response will be received</div></td><td class='btable strike'>hu</td></tr>
 	<tr><td class='btable'>Indonesian</td><td class='btable'>id</td></tr>
-	<tr><td class='btable'>Irish</td><td class='btable'>ga</td></tr>
+	<tr><td class='btable strike tooltip'>Irish<div class="tooltiptext">Incorrect translation will be received</div></td><td class='btable strike'>ga</td></tr>
 	<tr><td class='btable'>Italian</td><td class='btable'>it</td></tr>
 	<tr><td class='btable'>Japanese</td><td class='btable'>ja</td></tr>
 	<tr><td class='btable'>Korean</td><td class='btable'>ko</td></tr>	
