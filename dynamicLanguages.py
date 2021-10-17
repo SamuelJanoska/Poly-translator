@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from flask import Flask, request, render_template, jsonify
 
 from urllib.request import urlopen
@@ -6,9 +8,16 @@ import threading
 import json
 
 from contextlib import suppress
+import chardet
+
+import html
+
+#import make_response
+#from flask.ext.restful import reqparse, abort, Api, Resource
+
 
 app = Flask(__name__)
-
+app.config['JSON_AS_ASCII'] = False
 
 
 @app.route('/')
@@ -64,25 +73,25 @@ def response():
         API_KEY = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
         data = {'api_dev_key':API_KEY,
                 'accept':'application/json',
-                'Content-Type:':'application/x-www-form-urlencoded',
-                'api_paste_format':'python',
+                'Content-Type':'application/json; charset=utf-8',
+                'api_paste_format':'text',
                 'q':keyword,
                 'source':inpLang,
                 'target':targetLang}
         r = requests.post(url = API_ENDPOINT, data = data)
-        pastebin_url = r.text
-
-        res = {}
-        #print (pastebin_url)
-        res = pastebin_url.split(':')
-        res2 = res[1].split('"')
-        res3 = res2[1].split('.')
-        print (res3[0]) 
-        translated=res3[0]
-        if not translated=="Invalid request":
-            translatedList.append(translated)
-        
-        #print(inpLang, keyword)
+        pastebin_url = r.json()
+        print(pastebin_url)
+        if "error" in pastebin_url:
+            pass
+        else:
+            res=html.unescape(pastebin_url['translatedText'])
+            print(res)
+            
+            translated=res
+            if not translated=="Invalid request":
+                translatedList.append(translated)
+            
+            #print(inpLang, keyword)
 
 
     for item in langList:
@@ -100,10 +109,6 @@ def response():
     print(langList)
     print(translatedList)
     
-    # zip_iterator = zip(langList, translatedList)
-    # 3a_dictionary = {}
-    # a_dictionary = dict(zip_iterator)
-    # a_dictionary = {}
     for key in langList:
         for value in translatedList:
             a_dictionary[key] = value
