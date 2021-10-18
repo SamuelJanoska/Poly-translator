@@ -31,7 +31,7 @@ def response():
     a_dictionary = {}
     
     inpLang = request.form.get("inpLang")
-    keyword = request.form.get("keyword")
+    keyword = request.form.get("keyword").lower()
     target = request.form.get("outLang1")
     try:
         outLang2 = request.form.get("outLang2")
