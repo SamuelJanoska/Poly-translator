@@ -56,163 +56,49 @@
  <!--<h1 style="text-align: center">PolyTranslator</h1>-->
  <h1></h1>
  <div class="container">
- <form method="POST" action="/response">
+	<form method="POST" action="/response">
     <div class="form-group">
       <label class="mt-5">Word to translate: </label>
       <input type="text" class="form-control" value="{{keyword}}" name="keyword">
     </div>
     <div class="form-group">
-  <label>Input language: </label>
+	<label>Input language: </label>
 	<select class="form-control" placeholder="Enter input language" name="inpLang">
-		<option value="">None</option>
-		<option value="en">English</option>
-		<option value="ar">Arabic</option>
-		<option value="zh">Chinese</option>
-		<option value="fi">Finnish</option>
-		<option value="fr">French</option>
-		<option value="de">German</option>
-		<option value="hi">Hindi</option>
-		<option value="id">Indonesian</option>
-		<option value="it">Italian</option>
-		<option value="ja">Japanese</option>
-		<option value="ko">Korean</option>
-		<option value="pl">Polish</option>
-		<option value="pt">Portuguese</option>
-		<option value="ru">Russian</option>
-		<option value="es">Spanish</option>			
-		<option value="sv">Swedish</option>	
-		<option value="tr">Turkish</option>
-		<option value="uk">Ukrainian</option>
-		<option value="vi">Vietnamese</option>
+		{% include 'langSelection.html' %}
 	  </select>
     </div>
     <div class="form-group">
       <label>Output language: </label>
       <select class="form-control" placeholder="Enter output language" name="outLang1">
-		<option value="">None</option>
-		<option value="en">English</option>
-		<option value="ar">Arabic</option>
-		<option value="zh">Chinese</option>
-		<option value="fi">Finnish</option>
-		<option value="fr">French</option>
-		<option value="de">German</option>
-		<option value="hi">Hindi</option>
-		<option value="id">Indonesian</option>
-		<option value="it">Italian</option>
-		<option value="ja">Japanese</option>
-		<option value="ko">Korean</option>
-		<option value="pl">Polish</option>
-		<option value="pt">Portuguese</option>
-		<option value="ru">Russian</option>
-		<option value="es">Spanish</option>			
-		<option value="sv">Swedish</option>	
-		<option value="tr">Turkish</option>
-		<option value="uk">Ukrainian</option>
-		<option value="vi">Vietnamese</option>
+		{% include 'langSelection.html' %}
 	  </select>
     </div>
 	<input type="button" name="addMe" onclick="outLang2f()" value="+" id="outlang2B" btn btn-primary>
 	<div class="form-group" id="outLangC2" style="display:none">
 		<label>Output language 2: </label>
 	  <select class="form-control" placeholder="Enter output language" name="outLang2">
-		<option value="">None</option>
-		<option value="en">English</option>
-		<option value="ar">Arabic</option>
-		<option value="zh">Chinese</option>
-		<option value="fi">Finnish</option>
-		<option value="fr">French</option>
-		<option value="de">German</option>
-		<option value="hi">Hindi</option>
-		<option value="id">Indonesian</option>
-		<option value="it">Italian</option>
-		<option value="ja">Japanese</option>
-		<option value="ko">Korean</option>
-		<option value="pl">Polish</option>
-		<option value="pt">Portuguese</option>
-		<option value="ru">Russian</option>
-		<option value="es">Spanish</option>			
-		<option value="sv">Swedish</option>	
-		<option value="tr">Turkish</option>
-		<option value="uk">Ukrainian</option>
-		<option value="vi">Vietnamese</option>
+		{% include 'langSelection.html' %}
 	  </select>
 	</div>	
 	<input type="button" name="addMe" onclick="outLang3f()" value="+" btn btn-primary>
 	<div class="form-group" id="outLangC3" style="display:none">
 	      <label>Output language 3: </label>
       <select class="form-control" placeholder="Enter output language" name="outLang3">
-		<option value="">None</option>
-		<option value="en">English</option>
-		<option value="ar">Arabic</option>
-		<option value="zh">Chinese</option>
-		<option value="fi">Finnish</option>
-		<option value="fr">French</option>
-		<option value="de">German</option>
-		<option value="hi">Hindi</option>
-		<option value="id">Indonesian</option>
-		<option value="it">Italian</option>
-		<option value="ja">Japanese</option>
-		<option value="ko">Korean</option>
-		<option value="pl">Polish</option>
-		<option value="pt">Portuguese</option>
-		<option value="ru">Russian</option>
-		<option value="es">Spanish</option>			
-		<option value="sv">Swedish</option>	
-		<option value="tr">Turkish</option>
-		<option value="uk">Ukrainian</option>
-		<option value="vi">Vietnamese</option>
+		{% include 'langSelection.html' %}
 	  </select>
 	</div>	
 	<input type="button" name="addMe" onclick="outLang4f()" value="+" btn btn-primary>
 	<div class="form-group" id="outLangC4" style="display:none">
 	  <label>Output language 4: </label>
       <select class="form-control" placeholder="Enter output language" name="outLang4">
-		<option value="">None</option>
-		<option value="en">English</option>
-		<option value="ar">Arabic</option>
-		<option value="zh">Chinese</option>
-		<option value="fi">Finnish</option>
-		<option value="fr">French</option>
-		<option value="de">German</option>
-		<option value="hi">Hindi</option>
-		<option value="id">Indonesian</option>
-		<option value="it">Italian</option>
-		<option value="ja">Japanese</option>
-		<option value="ko">Korean</option>
-		<option value="pl">Polish</option>
-		<option value="pt">Portuguese</option>
-		<option value="ru">Russian</option>
-		<option value="es">Spanish</option>			
-		<option value="sv">Swedish</option>	
-		<option value="tr">Turkish</option>
-		<option value="uk">Ukrainian</option>
-		<option value="vi">Vietnamese</option>
+		{% include 'langSelection.html' %}
 	  </select>
 	</div>	
 	<input type="button" name="addMe" onclick="outLang5f()" value="+">
 	<div class="form-group" id="outLangC5" style="display:none">
   <label>Output language 5: </label>
       <select class="form-control" placeholder="Enter output language" name="outLang5">
-		<option value="">None</option>
-		<option value="en">English</option>
-		<option value="ar">Arabic</option>
-		<option value="zh">Chinese</option>
-		<option value="fi">Finnish</option>
-		<option value="fr">French</option>
-		<option value="de">German</option>
-		<option value="hi">Hindi</option>
-		<option value="id">Indonesian</option>
-		<option value="it">Italian</option>
-		<option value="ja">Japanese</option>
-		<option value="ko">Korean</option>
-		<option value="pl">Polish</option>
-		<option value="pt">Portuguese</option>
-		<option value="ru">Russian</option>
-		<option value="es">Spanish</option>			
-		<option value="sv">Swedish</option>	
-		<option value="tr">Turkish</option>
-		<option value="uk">Ukrainian</option>
-		<option value="vi">Vietnamese</option>
+		{% include 'langSelection.html' %}
 	  </select>
 	</div>	
     <button type="submit" class="btn btn-primary">Submit</button>
@@ -221,62 +107,35 @@
 
   
   
-<p></p>
-  <br> Translation of {{keyword}} is: </br>
-  <table class="table table-striped">
-  <th class='btable'>
-	language
-  </th>
-    <th class='btable'>
-	translated word
-  </th>
-	{% for key, value in a_dictionary.items() %}
-	  {% if key %}
-	  {% endif %}
-	  {% if value %} 
-	  <tr>
-		<td class='btable'>
-		{{key}}
-		</td>
-		<td class='btable'>
-		{{value}}
-		</td>
-	  </tr>
-	  {% endif %}
-	{% endfor %} 
-  </table>
+	<p></p>
+	<br> Translation of {{keyword}} is: </br>
+	<table class="table table-striped">
+		<th class='btable'>
+		language
+		</th>
+		<th class='btable'>
+		translated word
+		</th>
+		{% for key, value in a_dictionary.items() %}
+		  {% if key %}
+		  {% endif %}
+		  {% if value %} 
+		  <tr>
+			<td class='btable'>
+			{{key}}
+			</td>
+			<td class='btable'>
+			{{value}}
+			</td>
+		  </tr>
+		  {% endif %}
+		{% endfor %} 
+	</table>
   
   
 <button type="button" class="btn btn-secondary" data-toggle="collapse" data-target="#legend">Legend</button>
 
-<p>
-  <table id='legend' class="collapse table table-striped">
-	<th class=''>Language</th>
-	<th class=''>Shortcut</th>
-	<tr><td class=''>English</td><td class=''>en</td></tr>
-	<tr><td class=''>Arabic</td><td class=''>ar</td></tr>
-	<tr><td class=''>Chinese</td><td class=''>zh</td></tr>
-	<!--<tr><td class=''>Dutch</td><td class=''>nl</td></tr>-->
-	<tr><td class=''>Finnish</td><td class=''>fi</td></tr>
-	<tr><td class=''>French</td><td class=''>fr</td></tr>
-	<tr><td class=''>German</td><td class=''>de</td></tr>
-	<tr><td class=''>Hindi</td><td class=''>hi</td></tr>
-	<tr><td class=' strike' data-toggle="tooltip" title="'hu not supported' response will be received" data-placement="bottom">Hungarian</td><td class='strike'>hu</td></tr>
-	<tr><td class=''>Indonesian</td><td class=''>id</td></tr>
-	<tr><td class=' strike' data-toggle="tooltip" title="Incorrect translation will be received">Irish</td><td class=' strike'>ga</td></tr>
-	<tr><td class=''>Italian</td><td class=''>it</td></tr>
-	<tr><td class=''>Japanese</td><td class=''>ja</td></tr>
-	<tr><td class=''>Korean</td><td class=''>ko</td></tr>	
-	<tr><td class=''>Polish</td><td class=''>pl</td></tr>	
-	<tr><td class=''>Portuguese</td><td class=''>pt</td></tr>	
-	<tr><td class=''>Russian</td><td class=''>ru</td></tr>		
-	<tr><td class=''>Spanish</td><td class=''>es</td></tr>		
-	<tr><td class=' strike' data-toggle="tooltip" title="'sw not supported' response will be received" data-placement="bottom">Swedish</td><td class='strike'>sv</td></tr>		
-	<tr><td class=''>Turkish</td><td class=''>tr</td></tr>	
-	<tr><td class=''>Ukrainian</td><td class=''>uk</td></tr>		
-	<tr><td class=''>Vietnamese</td><td class=''>vi</td></tr>		
-</table>
-</p>
+{% include 'legend.html' %}
 
   </div>
 
